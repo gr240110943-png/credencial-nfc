@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credencial NFC | Estudiante</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #111827, #312e81, #7c3aed);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 850px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .nfc-icon {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    h1 { font-size: 30px; margin-bottom: 8px; }
+    .subtitle { color: #ddd6fe; font-size: 16px; }
+
+    .card {
+      background: rgba(255,255,255,.97);
+      color: #1f2937;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.30);
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5b21b6;
+      font-size: 42px;
+    }
+
+    .name {
+      font-size: 27px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    .career {
+      color: #6d28d9;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .school { color: #6b7280; }
+
+    .info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .info-box {
+      background: #f5f3ff;
+      border-radius: 15px;
+      padding: 17px;
+    }
+
+    .label {
+      display: block;
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 5px;
+    }
+
+    .value {
+      font-weight: bold;
+      color: #312e81;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .button {
+      flex: 1;
+      min-width: 180px;
+      text-align: center;
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: bold;
+      background: #6d28d9;
+      color: white;
+    }
+
+    .button.secondary {
+      background: #ede9fe;
+      color: #5b21b6;
+    }
+
+    .nfc-note {
+      margin-top: 25px;
+      padding: 18px;
+      border-radius: 15px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #166534;
+      text-align: center;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #ddd6fe;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .profile { flex-direction: column; text-align: center; }
+      .info { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+      h1 { font-size: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <header class="header">
+      <div class="nfc-icon">📡</div>
+      <h1>Credencial Estudiantil NFC</h1>
+      <p class="subtitle">Identificación física conectada con información digital</p>
+    </header>
+
+    <section class="card">
+
+      <div class="profile">
+        <div class="photo">👤</div>
+
+        <div>
+          <div class="name">Cinthia Areli Flores Gallardo</div>
+          <div class="career">Ingeniería Informática</div>
+          <div class="school">Instituto Tecnológico Superior de Jalisco</div>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="info-box">
+          <span class="label">Matrícula</span>
+          <span class="value">240110943</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Semestre</span>
+          <span class="value">5to</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Correo</span>
+          <span class="value">gr240110943@elgrullo.tecnm.edu.mx</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Proyecto</span>
+          <span class="value">Credencial inteligente NFC</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="button" href="mailto:tu.correo@ejemplo.com">✉️ Contactar</a>
+        <a class="button secondary" href="#proyecto">📘 Ver proyecto</a>
+      </div>
+
+      <div class="nfc-note" id="proyecto">
+        <strong>📱 ¿Cómo funciona?</strong><br><br>
+        Acerca un teléfono compatible con NFC a la credencial física.
+        La etiqueta NFC dirige al usuario a esta página con la información digital.
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      Proyecto académico · Tecnología NFC · 13.56 MHz
+    </footer>
+
+  </main>
+</body>
+</html>
