@@ -59,17 +59,13 @@
       border-bottom: 1px solid #e5e7eb;
     }
 
-    .photo {
+     .photo {
       width: 120px;
       height: 120px;
       flex-shrink: 0;
       border-radius: 20px;
-      background: linear-gradient(135deg, #ddd6fe, #c4b5fd);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #5b21b6;
-      font-size: 42px;
+      object-fit: cover; /* Esto evita que la foto se deforme o aplaste */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Le da un sombreado bonito a tu foto */
     }
 
     .name {
@@ -175,7 +171,7 @@
     <section class="card">
 
       <div class="profile">
-        <div class="photo">👤</div>
+        <img class="photo" src="foto.jpeg" alt="Foto de Cinthia">
 
         <div>
           <div class="name">Cinthia Areli Flores Gallardo</div>
@@ -207,7 +203,7 @@
       </div>
 
       <div class="actions">
-        <a class="button" href="mailto:tu.correo@ejemplo.com">✉️ Contactar</a>
+        <a class="button" href="mailto:gr240110943@elgrullo.tecmm.edu.mx">✉️ Contactar</a>
         <a class="button secondary" href="#proyecto">📘 Ver proyecto</a>
       </div>
 
